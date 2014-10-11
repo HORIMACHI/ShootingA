@@ -1,0 +1,17 @@
+###↓下記を入力して保存 ###
+Debug/*
+Release/*
+
+*.opensdf
+*.sdf
+*.suo
+*.md
+Log.txt
+
+
+
+
+#自分のユーザー名
+*.user
+
+ ###↑ココまで ###
