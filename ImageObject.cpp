@@ -3,34 +3,34 @@
 
 CImageObject::CImageObject(void)
 {
-	m_ImageID = -1;
-	m_x = 0;
-	m_y = 0;
+	SetImageID(-1);
+	m_Location.x = 0;
+	m_Location.y = 0;
 }
 
-CImageObject::CImageObject(int id)
+CImageObject::CImageObject(int imageID)
 {
-	m_ImageID = id;
-	m_x = 0;
-	m_y = 0;
+	SetImageID(imageID);
+	m_Location.x = 0;
+	m_Location.y = 0;
 }
 
-CImageObject::CImageObject(int x, int y, int id)
+CImageObject::CImageObject(int x, int y, int imageID)
 {
-	m_ImageID = id;
-	m_x = x;
-	m_y = y;
+	SetImageID(imageID);
+	m_Location.x = x;
+	m_Location.y = y;
 }
 
-void CImageObject::SetImageID(int image_ID)
+void CImageObject::SetImageID(int imageID)
 {
-	m_ImageID = image_ID;
-	GetGraphSize(image_ID,&m_Width,&m_Height);
+	m_ImageID = imageID;
+	GetGraphSize(imageID, &m_Width, &m_Height);
 }
 
 void CImageObject::DrawImage(void)
 {
-	DrawGraph(m_x, m_y, m_ImageID, TRUE);
+	DrawGraph(m_Location.x, m_Location.y, m_ImageID, TRUE);
 }
 
 

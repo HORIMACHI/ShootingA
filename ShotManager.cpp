@@ -125,7 +125,7 @@ void CShotManager::CheckShot(void)
 	CShot* pShotBuffer = m_pShotFirst;
 	while(pShotBuffer == NULL)
 	{
-		if(pShotBuffer->m_x > 640)
+		if(pShotBuffer->m_Location.x > 640)
 		{
 			pShotBuffer = m_pShotFirst;
 			Remove(nCnt);
@@ -143,7 +143,7 @@ void CShotManager::MoveShot(void)
 	CShot* pShotBuffer = m_pShotFirst;
 	while(pShotBuffer != NULL)
 	{
-		pShotBuffer->m_y = pShotBuffer->m_y - 10;
+		pShotBuffer->m_Location.y = pShotBuffer->m_Location.y - 10;
 		pShotBuffer = pShotBuffer->m_pNextShot;
 	}
 	return;

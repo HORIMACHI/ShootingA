@@ -5,7 +5,8 @@ class CEquipment
 {
 public:
 	CShot* m_pShotFirst;
-	int ShotCount;
+	int m_ShotCount;
+	int m_ShotInterval;
 
 public:
 	CEquipment(void);

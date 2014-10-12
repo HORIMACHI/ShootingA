@@ -4,7 +4,8 @@
 CEquipment::CEquipment(void)
 {
 	m_pShotFirst = NULL;
-	int ShotCount = 0;
+	int m_ShotCount = 0;
+	int m_ShotInterval = 0;
 }
 
 CEquipment::~CEquipment(void)
