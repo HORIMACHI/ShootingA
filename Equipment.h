@@ -1,17 +1,21 @@
 #pragma once
-#include "Shot.h"
+#include "Bullet.h"
 
 class CEquipment
 {
 public:
-	CShot* m_pShotFirst;
+	CBullet* m_pShotFirst;
+	double m_Direction;
+	double m_ShotSpeed;
 	int m_ShotCount;
 	int m_ShotInterval;
+protected:
+	int m_LastShootingTime;
 
 public:
 	CEquipment(void);
 	~CEquipment(void);
 
-	CShot* CreateShot(int imageID, int x, int y);
+	CBullet* CreateShot(int x, int y, int imageID);
 };
 

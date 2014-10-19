@@ -4,8 +4,11 @@
 CEquipment::CEquipment(void)
 {
 	m_pShotFirst = NULL;
-	int m_ShotCount = 0;
-	int m_ShotInterval = 0;
+	m_Direction = 0;
+	m_ShotCount = 0;
+	m_ShotInterval = 0;
+	m_ShotSpeed = 0;
+	m_LastShootingTime = 0;
 }
 
 CEquipment::~CEquipment(void)
@@ -13,8 +16,16 @@ CEquipment::~CEquipment(void)
 
 }
 
-CShot* CEquipment::CreateShot(int imageID, int x, int y)
+CBullet* CEquipment::CreateShot( int x, int y, int imageID)
 {
-	CShot* shot = new CShot(imageID, x, y);
-	return shot;
+	if(GetNowCount() - m_LastShootingTime > m_ShotInterval)
+	{
+		CBullet* shot = new CBullet(x, y, imageID);
+		shot->m_Direction = m_Direction;
+		shot->m_Speed = m_ShotSpeed;
+		m_LastShootingTime = GetNowCount();
+		m_Direction = m_Direction + 30;
+		return shot;
+	}
+	return NULL;	
 }

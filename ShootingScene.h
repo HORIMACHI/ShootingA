@@ -10,7 +10,8 @@ public:
 	CPlayer m_Player;
 	int m_shotid;
 	int m_charid;
-	CShotManager m_ShotManager;
+	CShotManager m_EnemyShotManager;
+	CShotManager m_PlayerShotManager;
 	CEnemy m_Enemy;
 	//CEnemyManager EnemyManager;
 
@@ -24,6 +25,7 @@ public:
 public:
 	CShootingScene(void);
 	~CShootingScene(void);
+	void InitScene(void);
 	void CheckKey(void);
 	void DrawImage(void);
 };

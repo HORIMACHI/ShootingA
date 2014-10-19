@@ -16,6 +16,7 @@ int WINAPI WinMain(HINSTANCE,HINSTANCE,LPSTR,int){
 		}
 
 		CShootingScene CShootingScene;
+		CShootingScene.InitScene();
 		SetDrawScreen( DX_SCREEN_BACK ) ;
 		while(1)
 		{		

@@ -13,13 +13,13 @@ CShotManager::~CShotManager(void)
 {
 }
 
-CShot* CShotManager::FindLast(void)
+CBullet* CShotManager::FindLast(void)
 {
 	if(m_pShotFirst == NULL)
 	{
 		return NULL;
 	}
-	CShot* pShotBuffer = m_pShotFirst;
+	CBullet* pShotBuffer = m_pShotFirst;
 	while(pShotBuffer->m_pNextShot != NULL)
 	{
 		pShotBuffer = pShotBuffer->m_pNextShot;
@@ -27,9 +27,9 @@ CShot* CShotManager::FindLast(void)
 	return pShotBuffer;
 }
 
-void CShotManager::Add(CShot* pShot)
+void CShotManager::Add(CBullet* pShot)
 {
-	CShot* pShotLast = FindLast();
+	CBullet* pShotLast = FindLast();
 	if(pShotLast == NULL)
 	{
 		m_pShotFirst = pShot;
@@ -51,9 +51,9 @@ void CShotManager::Remove(int nIndex)
 		return;
 	}
 
-	CShot* pShotFront = GetAt(nIndex - 1);
-	CShot* pShotRemove = GetAt(nIndex);
-	CShot* pShotBack = GetAt(nIndex + 1);
+	CBullet* pShotFront = GetAt(nIndex - 1);
+	CBullet* pShotRemove = GetAt(nIndex);
+	CBullet* pShotBack = GetAt(nIndex + 1);
 
 	if(pShotRemove == NULL)
 	{
@@ -80,7 +80,7 @@ void CShotManager::Remove(int nIndex)
 	return;
 }
 
-CShot* CShotManager::GetAt(int nIndex)
+CBullet* CShotManager::GetAt(int nIndex)
 {
 	if(nIndex < 0)
 	{
@@ -92,7 +92,7 @@ CShot* CShotManager::GetAt(int nIndex)
 		return NULL;
 	}
 
-	CShot* pShotBuffer = m_pShotFirst;
+	CBullet* pShotBuffer = m_pShotFirst;
 	for(int nCnt = 0; nCnt < nIndex; nCnt++)
 	{
 		if(pShotBuffer == NULL)
@@ -106,7 +106,7 @@ CShot* CShotManager::GetAt(int nIndex)
 
 void CShotManager::DrawShot(void)
 {
-	CShot* pShotBuffer = m_pShotFirst;
+	CBullet* pShotBuffer = m_pShotFirst;
 	while(pShotBuffer != NULL)
 	{
 		pShotBuffer->DrawImage();
@@ -122,10 +122,10 @@ void CShotManager::CheckShot(void)
 	}
 
 	int nCnt = 0;
-	CShot* pShotBuffer = m_pShotFirst;
+	CBullet* pShotBuffer = m_pShotFirst;
 	while(pShotBuffer == NULL)
 	{
-		if(pShotBuffer->m_Location.x > 640)
+		if(pShotBuffer->m_x > 640)
 		{
 			pShotBuffer = m_pShotFirst;
 			Remove(nCnt);
@@ -140,10 +140,11 @@ void CShotManager::CheckShot(void)
 
 void CShotManager::MoveShot(void)
 {
-	CShot* pShotBuffer = m_pShotFirst;
+	CBullet* pShotBuffer = m_pShotFirst;
 	while(pShotBuffer != NULL)
 	{
-		pShotBuffer->m_Location.y = pShotBuffer->m_Location.y - 10;
+		pShotBuffer->Move();
+		//pShotBuffer->m_y = pShotBuffer->m_y - 10;
 		pShotBuffer = pShotBuffer->m_pNextShot;
 	}
 	return;

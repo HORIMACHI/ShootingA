@@ -3,10 +3,7 @@
 
 CCharacter::CCharacter(void)
 {
-}
 
-CCharacter::CCharacter(int ImageID)
-{
 }
 
 CCharacter::~CCharacter(void)

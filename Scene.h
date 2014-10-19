@@ -11,6 +11,7 @@ public:
 	CScene(void);
 	~CScene(void);
 
+	virtual void InitScene(void) = 0;
 	void LoadBackgroundImage(LPCTSTR);
 	void LoadBackgroundMusic(LPCTSTR);
 	void CheckKey(void);
