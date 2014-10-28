@@ -14,10 +14,10 @@ public:
 public:
 	CNode<T> *p_head = NULL;
 public:
-	int m_length = 0;
+	int m_length;
 };
 /* ŽÀ‘• */
-template <class T> CDList<T>::CDList(){};
+template <class T> CDList<T>::CDList() :m_length(0){};
 template <class T> CDList<T>::~CDList(){};
 
 template <class T>
