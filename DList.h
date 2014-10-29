@@ -3,18 +3,24 @@
 #include "Node.h"
 
 template <class T> class CDList{
+private:
+	CNode<T> *p_head = NULL;
+
+public:
+	int m_length;
+
 public:
 	CDList();
 	~CDList();
 	CNode<T>* FindLast();
 	void Add(CNode<T> *n);
 	void Remove(int index);
-	T GetAt(int index);
+	CNode<T>* GetAt(int index);
 	void GetAtPrint(int index);//デバッグ用関数
-public:
-	CNode<T> *p_head = NULL;
-public:
-	int m_length;
+	
+	void DrawShot(void);
+	void CheckShot(void);
+	void MoveShot(void);
 };
 /* 実装 */
 template <class T> CDList<T>::CDList() :m_length(0){};
@@ -88,7 +94,7 @@ void CDList<T>::Remove(int index){
 	}
 }
 template <class T>
-T CDList<T>::GetAt(int index){
+CNode<T>* CDList<T>::GetAt(int index){
 	CNode<T> *p_follow = p_head;
 	if (index > m_length - 1){
 		return NULL;
@@ -96,7 +102,7 @@ T CDList<T>::GetAt(int index){
 	for (int i = 0; i < index; i++){
 		p_follow = p_follow->m_pNext;
 	}
-	return p_follow->value;
+	return p_follow;
 }
 template <class T>
 void CDList<T>::GetAtPrint(int index){

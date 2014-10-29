@@ -30,6 +30,11 @@ void CShootingScene::InitScene(void)
 	m_BackGroundImageRight.SetImageID(LoadGraph(_T("Image\\背景.png")));
 	m_BackGroundImageRight.m_x = 400;
 
+	//バックグラウンド再生
+	LoadBackgroundMusic(_T("Sound\\BGM\\rinkai.wav"));
+	ChangeVolumeSoundMem(50, m_BackgroundMusic);		//音量調節
+	PlaySoundMem(m_BackgroundMusic, DX_PLAYTYPE_LOOP,TRUE);
+
 	m_Enemy.SetImageID(LoadGraph(_T("Image\\ボス258.png")));
 	m_Enemy.SetCenterX(200);
 	m_Enemy.SetCenterY(130);

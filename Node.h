@@ -1,15 +1,15 @@
 //CNode.h
 template <class T> class CNode{
-public:
-	CNode();
-	CNode(T val);
-	~CNode();
-	void setValue(T val);
-	T getValue();
-public:
-	T m_TValue;
-	CNode<T> *m_pNext;
-	CNode<T> *m_pPrev;
+	public:
+		CNode();
+		CNode(T val);
+		~CNode();
+		void setValue(T val);
+		T getValue();
+	public:
+		T m_TValue;
+		CNode<T> *m_pNext;
+		CNode<T> *m_pPrev;
 };
 //ŽÀ‘••”
 template <class T>
