@@ -29,7 +29,14 @@ void CBullet::Move(void)
 	m_x = m_x + sin(degree) * m_Speed;
 	m_y = m_y + cos(degree) * m_Speed;
 }
-
+int CBullet::DeleteBullet(void)
+{
+	if (m_x > 640 + GetWidth() || m_x < 0 - GetWidth() || m_y < 0 - GetHeight() || m_y > 480 + GetHeight())//’e‚Ì‰æ‘œ‚Ì‘å‚«‚³‚É‚æ‚Á‚Ä”ÍˆÍ‚ğ•ÏX‚·‚é
+	{
+		return NULL;
+	}
+	return 1;
+}
 
 
 

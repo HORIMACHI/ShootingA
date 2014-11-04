@@ -1,6 +1,6 @@
 #pragma once
 #include "ImageObject.h"
-
+#include <stdio.h>
 class CBullet:public CImageObject
 {
 public:
@@ -13,5 +13,6 @@ public:
 	CBullet(int nx, int ny, double Direction, double shotSpeed, int nImageID);
 	
 	void Move(void);
+	int DeleteBullet(void);
 };
 

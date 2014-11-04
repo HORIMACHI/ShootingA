@@ -93,11 +93,9 @@
     <ClCompile Include="ShootingScene.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="ImageObject.cpp" />
-    <ClCompile Include="ShotManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h" />
-    <ClInclude Include="DList.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="ImageObject.h" />
     <ClInclude Include="Equipment.h" />
@@ -107,6 +105,7 @@
     <ClInclude Include="ShootingScene.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="ShotManager.h" />
+    <ClInclude Include="TitleScene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

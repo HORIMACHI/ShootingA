@@ -65,7 +65,7 @@ void CShootingScene::CheckKey(void)
 	if(m_Player.GetCenterY() > SHOOTING_FIELD_HEIGHT)
 		m_Player.SetCenterY(SHOOTING_FIELD_HEIGHT);
 
-	if(CheckHitKey(KEY_INPUT_SPACE) == 1)
+ 	if(CheckHitKey(KEY_INPUT_SPACE) == 1)
 	{
 		CBullet* shot = m_Player.m_pEquipment.CreateShot(m_Player.GetCenterX(), m_Player.GetCenterY(),m_shotid);
 		if(shot != NULL)
@@ -74,6 +74,7 @@ void CShootingScene::CheckKey(void)
 		}
 	}
 }
+
 
 void CShootingScene::DrawImage(void)
 {
@@ -89,4 +90,5 @@ void CShootingScene::DrawImage(void)
 	m_h.DrawImage();
 	m_PlayerShotManager.MoveShot();
 	m_PlayerShotManager.CheckShot();
+	m_PlayerShotManager.DeleteShot();
 }
