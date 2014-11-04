@@ -14,6 +14,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int){
 	{
 		return -1;
 	}
+	
 
 	CShootingScene CShootingScene;
 	CShootingScene.InitScene();
@@ -21,7 +22,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int){
 	while (1)
 	{
 		ClearDrawScreen();
-		CShootingScene.DrawImage();
+ 		CShootingScene.DrawImage();
 		ScreenFlip();
 		if (ProcessMessage() < 0) break;
 #ifdef _DEBUG

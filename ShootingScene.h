@@ -10,8 +10,8 @@ public:
 	CPlayer m_Player;
 	int m_shotid;
 	int m_charid;
-	CShotManager m_EnemyShotManager;
-	CShotManager m_PlayerShotManager;
+	CShotManager<CBullet*> m_EnemyShotManager;
+	CShotManager<CBullet*> m_PlayerShotManager;
 	CEnemy m_Enemy;
 	//CEnemyManager EnemyManager;
 

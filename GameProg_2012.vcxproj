@@ -93,7 +93,6 @@
     <ClCompile Include="ShootingScene.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="ImageObject.cpp" />
-    <ClCompile Include="ShotManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h" />

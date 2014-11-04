@@ -13,7 +13,8 @@ public:
 	CDList();
 	~CDList();
 	CNode<T>* FindLast();
-	void Add(CNode<T> *n);
+//	void Add(CNode<T> *n);
+	void Add(T data);
 	void Remove(int index);
 	CNode<T>* GetAt(int index);
 	void GetAtPrint(int index);//デバッグ用関数
@@ -41,6 +42,7 @@ CNode<T> *CDList<T>::FindLast(){
 };
 
 template <class T>
+/*
 void CDList<T>::Add(CNode<T> *n){
 	CNode<T> *p_last = FindLast();
 	if (p_head == NULL){
@@ -53,8 +55,22 @@ void CDList<T>::Add(CNode<T> *n){
 		m_length++;
 	}
 }
-
-template <class T>
+*/
+void CDList<T>::Add(T data){
+	CNode<T> *n = new CNode<T>();
+	CNode<T> *p_last = FindLast();
+	if (p_head == NULL){
+		p_head = n;
+		n->setValue(data);
+		m_length++;
+	}
+	else{
+		p_last->m_pNext = n;
+		n->m_pPrev = p_last;
+		n->setValue(data);
+		m_length++;
+	}
+}template <class T>
 void CDList<T>::Remove(int index){
 	CNode<T> *p_follow = p_head;
 	CNode<T> *tmp_pPrev = nullptr;

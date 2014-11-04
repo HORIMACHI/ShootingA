@@ -1,6 +1,6 @@
 #pragma once
 #include "ImageObject.h"
-
+#include <stdio.h>
 class CBullet:public CImageObject
 {
 public:
