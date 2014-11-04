@@ -46,6 +46,8 @@ public:
 	void DrawShot(void);
 	void CheckShot(void);
 	void MoveShot(void);
+	void DeleteShot(void);//íeÇÃçÌèú
+
 };
 
 template<typename T>
@@ -322,7 +324,25 @@ void CShotManager<T>::MoveShot(void)
 	}
 	return;
 }
-
+template <typename T>
+void CShotManager<T>::DeleteShot(void)
+{
+	SetCursorStart();
+	CMT_Node<T>* pShotBuffer = m_pFirstNode;
+	
+	while (m_pCursor != m_pLastNode){
+		if (m_pCursor->m_Data->DeleteBullet() == NULL)
+		{
+			delete GetCursorData();
+			RemoveCursor();
+		}
+		else
+		{
+			SetCursorNext();
+		}
+	}
+	return;
+}
 
 ///////////////////////////////////////////////////////
 

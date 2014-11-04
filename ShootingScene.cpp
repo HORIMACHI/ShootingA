@@ -90,4 +90,5 @@ void CShootingScene::DrawImage(void)
 	m_h.DrawImage();
 	m_PlayerShotManager.MoveShot();
 	m_PlayerShotManager.CheckShot();
+	m_PlayerShotManager.DeleteShot();
 }

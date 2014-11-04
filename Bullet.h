@@ -13,5 +13,6 @@ public:
 	CBullet(int nx, int ny, double Direction, double shotSpeed, int nImageID);
 	
 	void Move(void);
+	int DeleteBullet(void);
 };
 
