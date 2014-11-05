@@ -327,10 +327,12 @@ void CShotManager<T>::MoveShot(void)
 template <typename T>
 void CShotManager<T>::DeleteShot(void)
 {
+	if (m_pCursor == NULL)return;
+
 	SetCursorStart();
 	CMT_Node<T>* pShotBuffer = m_pFirstNode;
 	
-	while (m_pCursor != m_pLastNode){
+	while (m_pCursor != NULL){
 		if (m_pCursor->m_Data->DeleteBullet() == NULL)
 		{
 			delete GetCursorData();
